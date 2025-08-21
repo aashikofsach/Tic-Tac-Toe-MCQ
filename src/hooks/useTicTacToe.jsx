@@ -10,8 +10,13 @@ function useTicTacToe() {
 
          const WINNING_PATTERN = [];
 
-         const handleClick = () =>{
+         const handleClick = (index) =>{
+            console.log("handle click")
 
+            const newBoard = [...board];
+            newBoard[index] = isNext? "X" : "O";
+            setBoard(newBoard);
+            setIsNext((prev)=>!prev)
          }
 
          const calculatingWinner = () =>
