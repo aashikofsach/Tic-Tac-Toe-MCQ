@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-const initialBoard = () => Array(9).fill(null);
+import useTicTacToe from '../hooks/useTicTacToe'
 
 function TicTacToe() {
-     const [board , setBoard] = useState(initialBoard());
+
+    const {board,handleClick,calculatingWinner,getStatusMessage,resetMessage } = useTicTacToe();
+
   console.log(board)
   return (
     <div className='game'>
       <div className='status'>
-        Player X turn
-        <button className='reset'>Reset Game</button>
+      {getStatusMessage()}
+        <button className='reset' onClick={resetMessage}>Reset Game</button>
       </div>
       <div className='board'>
         {
