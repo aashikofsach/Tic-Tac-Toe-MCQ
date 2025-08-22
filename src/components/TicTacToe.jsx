@@ -3,7 +3,7 @@ import useTicTacToe from '../hooks/useTicTacToe'
 
 function TicTacToe() {
 
-    const {board,handleClick,calculatingWinner,getStatusMessage,resetMessage } = useTicTacToe();
+    const {board,handleClick, calculatingWinner,getStatusMessage,resetMessage } = useTicTacToe();
 
   console.log(board)
   return (
