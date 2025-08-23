@@ -6,7 +6,7 @@
 }
 
 .game {
-  max-width: calc(3 * 100px);
+  max-width: calc(var(--n) * 100px);
   border: 2px solid black;
   padding: 20px;
   margin: 0 auto;
@@ -18,7 +18,7 @@
 }
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--n), 1fr);
 }
 .cell {
   width: 100px;

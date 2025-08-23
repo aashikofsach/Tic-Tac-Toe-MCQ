@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-const initialBoard = () => Array(9).fill(null);
+const initialBoard = (n) => Array(n*n).fill(null);
 
 
-function useTicTacToe() {
+function useTicTacToe(n) {
 
-         const [board , setBoard] = useState(initialBoard());
+         const [board , setBoard] = useState(initialBoard(n));
          const [isNext , setIsNext] = useState(true)
 
          const WINNING_PATTERN = [
@@ -60,7 +60,7 @@ function useTicTacToe() {
 
          const resetMessage = () => {
             console.log("reset message ")
-            setBoard(initialBoard())
+            setBoard(initialBoard(n))
             setIsNext(true)
 
          }
