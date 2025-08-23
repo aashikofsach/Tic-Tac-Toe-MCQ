@@ -9,7 +9,7 @@ function App() {
  
 
   return (
-    <TicTacToe n={3}/>
+    <TicTacToe n={4}/>
    
    
   )
