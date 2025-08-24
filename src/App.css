@@ -4,11 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+.n-value {
+  margin-bottom: 5px;
+}
 
 .game {
   max-width: calc(var(--n) * 100px);
   border: 2px solid black;
   padding: 20px;
+  /* margin-top: 5px; */
   margin: 0 auto;
 }
 .status {
