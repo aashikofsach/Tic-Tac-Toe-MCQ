@@ -67,7 +67,7 @@ function useTicTacToe(n) {
 
    const handleClick = (index) => {
       console.log("handle click")
-      let winner = calculatingWinner(board)
+      let winner = calculatingWinner(board , WINNING_PATTERN)
       console.log(winner)
       if (winner || board[index]) return;
 
@@ -77,21 +77,31 @@ function useTicTacToe(n) {
       setIsNext((prev) => !prev)
    }
 
-   const calculatingWinner = (curentBoard) => {
-      for (let i = 0; i < WINNING_PATTERN.length; i++) {
-         const [a, b, c] = WINNING_PATTERN[i];
-         if (curentBoard[a] && curentBoard[a] === curentBoard[b] && curentBoard[a] === curentBoard[c]) {
-            return curentBoard[a];
-         }
+   const calculatingWinner = (curentBoard, WINNING_PATTERN) => {
+      // for (let i = 0; i < WINNING_PATTERN.length; i++) {
+      //    const [a, b, c] = WINNING_PATTERN[i];
+      //    if (curentBoard[a] && curentBoard[a] === curentBoard[b] && curentBoard[a] === curentBoard[c]) {
+      //       return curentBoard[a];
+      //    }
+      // }
+      // console.log(curentBoard)
+      // return null;
+      console.log("jai shree", WINNING_PATTERN)
+      for( let pattern of WINNING_PATTERN)
+      {
+         let [first] = pattern;
+
+         if(curentBoard[first] && pattern.every((idx)=> curentBoard[idx]=== curentBoard[first]))
+            return curentBoard[first]
       }
-      console.log(curentBoard)
-      return null;
+
+      return null ;
 
 
    }
 
    const getStatusMessage = () => {
-      const winner = calculatingWinner(board);
+      const winner = calculatingWinner(board , WINNING_PATTERN);
       console.log(winner)
       if (winner) return `Player ${winner} Wins !`
       if (!board.includes(null))
