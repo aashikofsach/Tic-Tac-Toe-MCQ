@@ -1,6 +1,6 @@
 import useTicTacToe from '../hooks/useTicTacToe'
 
-function TicTacToe({n}) {
+function TicTacToe({n=3}) {
 
     const {board,handleClick, calculatingWinner,getStatusMessage,resetMessage } = useTicTacToe(n);
 
